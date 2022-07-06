@@ -64,20 +64,12 @@
             <div class="container d-flex flex-wrap flex-xl-nowrap align-items-center justify-content-between">
                 <a class="brand header_logo d-flex align-items-center" href="{{ url('/') }}">
                     <span class="logo">
-                        {{-- @foreach($web as $data)
-                                    <p class="footer_secondary-copyright">
-                                        {{ $data->name }} &copy;
-                                        <span class="linebreak">All rights reserved Copyrights <span id="currentYear"></span></span>
-                                    </p>
-                                @endforeach
-                                @if(count($web) < 1)
-                                
-                                @endif --}}
+                        @foreach($web as $data)
+                        <img class="logo-abbr" src="{{ isset($data) ? asset('profile/'. $data->logo) : '' }}" style="width:65px !important;">
+                        {{-- <span>{{ $data->name }}</span> --}}
+                        @endforeach
                     </span>
-                    @foreach($web as $data)
-                    <img class="logo-abbr" src="{{ isset($data) ? asset('profile/'. $data->logo) : '' }}" style="width: 100px !important;">
-                    {{-- <span>{{ $data->name }}</span> --}}
-                    @endforeach
+                   
                     @if(count($web) < 1)
                         <span class="accent">Wedding Organizer</span> 
                     @endif
