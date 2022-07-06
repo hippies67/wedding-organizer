@@ -149,32 +149,32 @@ $(document).ready(function() {
   });
 
 });
-            $("#bayarPaket").click(function() {
-                $("#bayarPaketForm").validate();
+            // $("#bayarPaket").click(function() {
+            //     $("#bayarPaketForm").validate();
 
-                if($('#bayarPaketForm').valid()) {
+            //     if($('#bayarPaketForm').valid()) {
                     
-                    var alamat = $("input[name=alamat]").val();
-                    var tanggal_acara = $("input[name=tanggal_acara]").val();
-                    $.ajax({
-                        url: "{{ route('login') }}",
-                        method: "POST",
-                        data: {"_token": "{{ csrf_token() }}", alamat:alamat, tanggal_acara:tanggal_acara},
-                        success: function(data) {
-                           if(data.status == "berhasil") {
-                                location.reload();
-                           } else {
-                               $(".alert").css("display", "block");
-                               $("input[name='username']").css("color", "#f1556c");
-                               $("input[name='username']").css("border", "1px solid #f1556c");
-                               $("input[name='password']").css("color", "#f1556c");
-                               $("input[name='password']").css("border", "1px solid #f1556c");
-                           }
-                        }
-                    });
-                }
+            //         var alamat = $("input[name=alamat]").val();
+            //         var tanggal_acara = $("input[name=tanggal_acara]").val();
+            //         $.ajax({
+            //             url: "{{ route('login') }}",
+            //             method: "POST",
+            //             data: {"_token": "{{ csrf_token() }}", alamat:alamat, tanggal_acara:tanggal_acara},
+            //             success: function(data) {
+            //                if(data.status == "berhasil") {
+            //                     location.reload();
+            //                } else {
+            //                    $(".alert").css("display", "block");
+            //                    $("input[name='username']").css("color", "#f1556c");
+            //                    $("input[name='username']").css("border", "1px solid #f1556c");
+            //                    $("input[name='password']").css("color", "#f1556c");
+            //                    $("input[name='password']").css("border", "1px solid #f1556c");
+            //                }
+            //             }
+            //         });
+            //     }
                 
-            });
+            // });
 
     $("#keranjangButton").click(function() {
                     var paket_wedding_id = $("input[name=paket_wedding_id]").val();

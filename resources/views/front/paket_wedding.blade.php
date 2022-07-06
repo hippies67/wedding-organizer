@@ -48,7 +48,7 @@
     <!-- Products section start -->
     <div class="shop-wrapper section--nopb">
         <div class="container d-flex flex-lg-row flex-wrap flex-column justify-content-between">
-            <a
+            {{-- <a
                 class="filterTrigger d-flex d-lg-none align-items-center justify-content-center"
                 href="#"
                 data-bs-toggle="collapse"
@@ -56,7 +56,7 @@
             >
                 Filters
                 <i class="icon-caret_down icon"></i>
-            </a>
+            </a> --}}
             <div class="shop_products d-flex flex-column">
                 <ul class="shop_products-list d-sm-flex flex-wrap">
                     @foreach($paket_wedding as $item)

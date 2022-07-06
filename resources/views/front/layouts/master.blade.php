@@ -586,12 +586,12 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label> <br>
-                            <input name="cart_username" class="header_user-search_field field required" type="text" autocomplete="new-username" placeholder="Username..." style="margin-top: 10px;width: 100%;">
+                            <input name="cart_username" class="cart_summary-form_field field required" type="text" autocomplete="new-username" placeholder="Username..." style="margin-top: 10px;width: 100%;">
                         </div>
 
                         <div class="form-group mt-4">
                             <label for="password">Password</label> <br>
-                            <input name="cart_password" class="header_user-search_field field required" type="password" autocomplete="new-password" placeholder="Password..." style="margin-top: 10px;width: 100%;">
+                            <input name="cart_password" class="cart_summary-form_field field required" type="password" autocomplete="new-password" placeholder="Password..." style="margin-top: 10px;width: 100%;">
                         </div>
                     </ul>
                     <button type="button" class="cartOffcanvas_body-btn btn" id="loginCartButton">Login</button>
@@ -615,12 +615,12 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label> <br>
-                            <input name="username" class="header_user-search_field field required" type="text" autocomplete="new-username" placeholder="Username..." style="margin-top: 10px;width: 100%;">
+                            <input name="username" class="cart_summary-form_field field required" type="text" autocomplete="new-username" placeholder="Username..." style="margin-top: 10px;width: 100%;">
                         </div>
 
                         <div class="form-group mt-4">
                             <label for="password">Password</label> <br>
-                            <input name="password" class="header_user-search_field field required" type="password" autocomplete="new-password" placeholder="Password..." style="margin-top: 10px;width: 100%;">
+                            <input name="password" class="cart_summary-form_field field required" type="password" autocomplete="new-password" placeholder="Password..." style="margin-top: 10px;width: 100%;">
                         </div>
                     </ul>
                     <button type="button" class="cartOffcanvas_body-btn btn" id="loginButton">Login</button>
@@ -645,37 +645,37 @@
                         </div> --}}
                         <div class="form-group" >
                             <label for="nama">Nama Lengkap</label> <br>
-                            <input name="register_nama" class="header_user-search_field field required" type="text" autocomplete="new-nama" placeholder="Nama Lengkap..." style="margin-top: 10px;width: 100%;">
+                            <input name="register_nama" class="cart_summary-form_field field required" type="text" autocomplete="new-nama" placeholder="Nama Lengkap..." style="margin-top: 10px;width: 100%;">
                         </div>
 
                         <div class="form-group" style="margin-top: 15px;">
                             <label for="username">Username</label> <br> 
-                            <input name="register_username" class="header_user-search_field field required" type="text" autocomplete="new-username" placeholder="Username..." style="margin-top: 10px;width: 100%;">
+                            <input name="register_username" class="cart_summary-form_field field required" type="text" autocomplete="new-username" placeholder="Username..." style="margin-top: 10px;width: 100%;">
                         </div>
 
                         <div class="form-group" style="margin-top: 15px;">
                             <label for="register_email">Email</label> <br>
-                            <input name="register_email" class="header_user-search_field field required" type="email" autocomplete="new-email" placeholder="Email..." style="margin-top: 10px;width: 100%;">
+                            <input name="register_email" class="cart_summary-form_field field required" type="email" autocomplete="new-email" placeholder="Email..." style="margin-top: 10px;width: 100%;">
                         </div>
 
                         <div class="form-group" style="margin-top: 15px;">
                             <label for="register_no_hp">No Hp</label> <br>
-                            <input name="register_no_hp" class="header_user-search_field field required" type="text" autocomplete="new-no-hp" placeholder="Nomor Hp..." style="margin-top: 10px;width: 100%;">
+                            <input name="register_no_hp" class="cart_summary-form_field field required" type="text" autocomplete="new-no-hp" placeholder="Nomor Hp..." style="margin-top: 10px;width: 100%;">
                         </div>
 
                         <div class="form-group" style="margin-top: 15px;">
                             <label for="register_alamat">Alamat</label> <br>
-                            <input name="register_alamat" class="header_user-search_field field required" type="text" autocomplete="new-alamat" placeholder="Alamat..." style="margin-top: 10px;width: 100%;">
+                            <input name="register_alamat" class="cart_summary-form_field field required" type="text" autocomplete="new-alamat" placeholder="Alamat..." style="margin-top: 10px;width: 100%;">
                         </div>
 
                         <div class="form-group mt-4">
                             <label for="password">Password</label> <br>
-                            <input name="register_password" class="header_user-search_field field required" id="konfirmasi_password" type="password" autocomplete="new-password" placeholder="Password..." style="margin-top: 10px;width: 100%;">
+                            <input name="register_password" class="cart_summary-form_field field required" id="konfirmasi_password" type="password" autocomplete="new-password" placeholder="Password..." style="margin-top: 10px;width: 100%;">
                         </div>
 
                         <div class="form-group mt-4">
                             <label for="password">Konfirmasi Password</label> <br>
-                            <input name="register_konfirmasi_password" class="header_user-search_field field required" type="password" autocomplete="new-password" placeholder="Password..." style="margin-top: 10px;width: 100%;">
+                            <input name="register_konfirmasi_password" class="cart_summary-form_field field required" type="password" autocomplete="new-password" placeholder="Password..." style="margin-top: 10px;width: 100%;">
                         </div>
                     </ul>
                     <button type="button" class="cartOffcanvas_body-btn btn" id="regsitrasiButton">Registrasi</button>
@@ -714,7 +714,14 @@
                         data: {"_token": "{{ csrf_token() }}", username:username, password:password},
                         success: function(data) {
                            if(data.status == "berhasil") {
-                                location.reload();
+                                $(".cartOffcanvas_header-close").click();
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Berhasil!',
+                                    text: 'Anda telah berhasil login!',
+                                }).then(function(){ 
+                                    location.reload();
+                                });
                            } else {
                                $(".alert").css("display", "block");
                                $("input[name='username']").css("color", "#f1556c");
@@ -759,6 +766,8 @@
                                     icon: 'success',
                                     title: 'Berhasil!',
                                     text: 'Paket telah berhasil dihapus dari keranjang!',
+                                }).then(function(){ 
+                                    location.reload();
                                 });
                                 $("#loginButtonTop").click();
                             } else {
@@ -766,7 +775,9 @@
                                     icon: 'error',
                                     title: 'Error!',
                                     text: 'Paket gagal untuk dihapus dari keranjang!',
-                                });  
+                                }).then(function(){ 
+                                    location.reload();
+                                });
                             }
                         }
                     });
@@ -787,7 +798,14 @@
                         data: {"_token": "{{ csrf_token() }}", username:username, password:password},
                         success: function(data) {
                            if(data.status == "berhasil") {
-                                location.reload();
+                                $(".cartOffcanvas_header-close").click();
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Berhasil!',
+                                    text: 'Anda telah berhasil login!',
+                                }).then(function(){ 
+                                    location.reload();
+                                });
                            } else {
                                $(".alert-cart").css("display", "block");
                                $("input[name='cart_username']").css("color", "#f1556c");

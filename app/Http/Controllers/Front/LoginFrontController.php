@@ -40,11 +40,12 @@ class LoginFrontController extends Controller
 
     public function create_user(Request $request)
     {
+
             $data = [
                 'nama' => $request->register_nama,
                 'username' => $request->register_username,
                 'email' => $request->register_email,
-                'no_hp' => $request->register_no_hp,
+                'no_telp' => $request->register_no_hp,
                 'alamat' => $request->register_alamat,
                 'password' => Hash::make($request->register_password)
             ];
