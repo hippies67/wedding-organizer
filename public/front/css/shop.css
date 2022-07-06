@@ -144,7 +144,7 @@ body {
 }
 
 .container {
-    max-width: 1380px
+    max-width: 1140px
 }
 
 .container--narrow {
@@ -2143,7 +2143,7 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"] {
     }
 
     .footer_main-about {
-        margin-top: -18px
+        margin-top: -50px
     }
 
     .footer_main-about_brand {

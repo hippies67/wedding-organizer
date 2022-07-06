@@ -148,8 +148,8 @@
                                 @endif --}}
                             {{-- </span> --}}
                             @foreach($web as $data)
-                            <span class="accent">{{ $data->name }}</span>
-                            {{-- <span>list</span> --}}
+                            <img class="logo-abbr" src="{{ isset($data) ? asset('profile/'. $data->logo) : '' }}" style="width:170px !important;">
+                            {{-- <span>{{ $data->name }}</span> --}}
                             @endforeach
                             {{-- @if(count($web) < 1)
                             <span class="accent">Wedding Organizer</span>
