@@ -232,8 +232,8 @@ select.error {
                     </div>
 
                     <div class="form-group">
-                        <label for="edit_deskripsi_paket">Deskripsi Paket <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="edit-description"></textarea>
+                        <label for="edit_deskripsi_paket" class="label-description">Deskripsi Paket <span class="text-danger">*</span></label>
+                        <textarea class="form-control edit-description" id="edit-description"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -456,7 +456,21 @@ $("#paketWeddingVerifiedSearch").keyup(function() {
     const idPaket = $('.get-paket-wedding-id').attr('id');
     const editPaketWeddingButton = $('.edit-paket-wedding-button').attr('id');
 
+    // const editDescription = $('.edit-description').attr('id');
+
+    // var editorInstance;
+
+    CKEDITOR.replace('edit-description');
     function editPaketWeddingFunction(data) {
+
+        // $(".label-description").remove();
+        // $(".label-description").append('<textarea class="form-control edit-description" id="edit-description"></textarea>');
+
+       
+        CKEDITOR.instances['edit-description'].setData(data.deskripsi_paket);
+
+    
+
         // $('.edit-paket-wedding-form').attr('id', 'editPaketWeddingForm');
         // $('#get_paket_wedding_id').attr('id', 'get_paket_wedding_id');
         // $('#editPaketWeddingButton').attr('id', 'editPaketWeddingButton');
@@ -472,8 +486,7 @@ $("#paketWeddingVerifiedSearch").keyup(function() {
         // $('[name="get_paket_wedding_id"]').val(data.id);
         $('[name="edit_nama_paket"]').val(data.nama_paket);
         $('[name="edit_harga_paket"]').val(data.harga_paket);
-        CKEDITOR.replace('edit-description');
-        CKEDITOR.instances['edit-description'].setData(data.deskripsi_paket);
+      
         $('[name="edit_foto_paket"]').val(data.foto_paket);
         + $('input[name="paket_id"]').val()
         validateEdit(data.id);
